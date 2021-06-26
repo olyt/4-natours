@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const {
   getUser,
+  getMe,
   updateMe,
   deleteMe,
   getAllUsers,
@@ -26,11 +27,11 @@ router.post('/forgotPassword', forgotPassword);
 router.patch('/resetPassword/:token', resetPassword);
 router.patch('/updatePassword', protect, updatePassword);
 
+router.get('/me', protect, getMe, getUser);
 router.patch('/updateMe', protect, updateMe);
 router.delete('/deleteMe', protect, deleteMe);
 
 router.route('/').get(getAllUsers).post(createUser);
-
 router.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 module.exports = router;
