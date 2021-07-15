@@ -2,11 +2,14 @@
 /node_modules
 /.pnp
 .pnp.js
-
+config.env
+.cache/**/*
 # testing
 /coverage
 
 # production
+/public/js/bundle.js
+/public/js/bundle.js.map
 /build
 documentation
 

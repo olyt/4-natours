@@ -125,7 +125,7 @@ tourSchema.virtual('durationWeeks').get(function () {
 });
 
 // virtual populate
-tourSchema.virtual('review', {
+tourSchema.virtual('reviews', {
   ref: 'Review',
   foreignField: 'tour',
   localField: '_id',
@@ -166,11 +166,10 @@ tourSchema.pre(/^find/, function (next) {
   next();
 });
 
-tourSchema.post(/^find/, function (docs, next) {
-  console.log(`query took ${Date.now() - this.start} ms`);
-  console.log(docs);
-  next();
-});
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`query took ${Date.now() - this.start} ms`);
+//   next();
+// });
 
 // aggregation middleware
 // tourSchema.pre('aggregate', function (next) {
