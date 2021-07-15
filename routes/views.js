@@ -7,8 +7,11 @@ const {
   getLoginForm,
   getAccount,
   getMyTours,
+  alerts,
 } = require('../controllers/views');
 const { isLoggedIn, protect } = require('../controllers/auth');
+
+router.use(alerts);
 
 router.get('/', isLoggedIn, getOverview);
 router.get('/tour/:slug', isLoggedIn, getTour);
