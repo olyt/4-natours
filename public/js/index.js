@@ -69,6 +69,6 @@ if (bookBtn) {
 
 const alertMsg = document.querySelector('body').dataset.alert;
 
-if (alert) {
+if (alertMsg) {
   showAlert('success', alertMsg, 15);
 }
